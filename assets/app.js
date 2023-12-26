@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import app from './app';
-
+import App from './react/App';
 import { registerReactControllerComponents } from '@symfony/ux-react';
 import './bootstrap.js';
 /*

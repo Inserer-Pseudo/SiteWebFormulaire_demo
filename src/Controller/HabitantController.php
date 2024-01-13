@@ -21,24 +21,40 @@ class HabitantController extends AbstractController
     }
 
     #[Route('/habitant/create', name: 'app_habitant_create')]
-    public function create(HabitantRepository $habitantRepository, EntityManagerInterface $em, Request $request): Response
+    public function create(HabitantRepository $habitantRepository, EntityManagerInterface $em): Response
     {
 
-/*
-        $headers = $request->headers->all();
-        echo($headers);*/
         /*
+        $headers = $request->headers->all();
+        echo($headers);
+        */
+        
         $habitant = new Habitant();
         $habitant
             ->setNom('Test')
             ->setPrenom('Test')
+            ->setGenreId(1)
             ->setDateNaissance(DateTime::createFromFormat('d/m/Y', '13/01/2024'))
-            ->setGenre(1)
             ->setAdresse('test');
 
         $em->persist($habitant);
         $em->flush();
-        */
+        
         return $this->json(["code"=> 200, "msg"=> "create habitant"]);
+    }
+    #[Route('/habitant/delete/{id}', name: 'app_habitant_delete')]
+    public function delete(HabitantRepository $habitantRepository, EntityManagerInterface $em, int $id): Response
+    {
+
+        /*
+        $headers = $request->headers->all();
+        echo($headers);
+        */
+        
+        $habitant = $habitantRepository->find($id);
+        $em->remove($habitant);
+        $em->flush();
+        
+        return $this->json(["code"=> 200, "msg"=> "delete habitant"]);
     }
 }

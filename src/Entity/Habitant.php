@@ -23,9 +23,6 @@ class Habitant
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $date_naissance = null;
 
-    #[ORM\Column]
-    private ?int $genre = null;
-
     #[ORM\Column(length: 255)]
     private ?string $adresse = null;
 
@@ -70,17 +67,8 @@ class Habitant
         return $this;
     }
 
-    public function getGenre(): ?int
-    {
-        return $this->genre;
-    }
 
-    public function setGenre(int $genre): static
-    {
-        $this->genre = $genre;
 
-        return $this;
-    }
 
     public function getAdresse(): ?string
     {
@@ -93,4 +81,5 @@ class Habitant
 
         return $this;
     }
+
 }

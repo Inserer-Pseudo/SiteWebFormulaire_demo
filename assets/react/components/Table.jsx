@@ -8,7 +8,7 @@ const Table = ()=> {
 console.log(data);
 const [data, setData] = useState({});
 useEffect(() => {
-    fetch('https://reqres.in/api/users?page=2')
+    fetch('http://127.0.0.1:8001/messages')
         .then(response => response.json())
         .then(json => setData(json));
 },[]);

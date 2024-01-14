@@ -28,11 +28,14 @@ const Table = () => {
     const handleCreate = (id) => {
         fetch(`http://127.0.0.1:8001/habitant/create`, {
             method: 'POST',
-            body: {test: "test"}
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: {nom: 'ui', prenom: 'ui', adresse: 'ui', dateNaissance: '2021-10-10'}
         })
             .then(response => response.json())
             .then(json => getHabitants())
-            .catch(error => console.error('Error deleting habitant:', error));
+            .catch(error => console.error('Error creating habitant:', error));
     }
 
 

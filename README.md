@@ -27,7 +27,7 @@
 <!-- Status -->
 
 <!-- <h4 align="center"> 
-	🚧  Projet_tp 🚀 Under construction...  🚧
+	🚧  Projet_tp 🚀 En construction...  🚧
 </h4> 
 
 <hr> -->
@@ -56,7 +56,7 @@ Ce projet vise à créer un site permettant de recenser les habitants d'une comm
 
 L'interface en ligne permet de créer, modifier et supprimer des habitants. Elle permet également de rechercher des habitants par nom, prénom, date de naissance, genre ou adresse.
 
-## :sparkles: Features ##
+## :sparkles: Implémentation ##
 
 :heavy_check_mark: Créer, modifier et supprimer un habitant;\
 :heavy_check_mark: Afficher la liste des habitants et leur infos;\
@@ -64,7 +64,7 @@ L'interface en ligne permet de créer, modifier et supprimer des habitants. Elle
 
 ## :rocket: Technologies ##
 
-The following tools were used in this project:
+Les outils suivants ont été utilisés dans ce projet :
 
 - Framework web : [Symfony](https://https://symfony.com//)
 - Serveur base de données : [mySQL_server](https://www.mysql.com/fr/)
@@ -72,29 +72,24 @@ The following tools were used in this project:
 - ORM : [Doctrine](https://www.doctrine-project.org/)
 - Frontend : [React](https://reactjs.org/)
 
-## :white_check_mark: Requirements ##
+## :white_check_mark: Prérequis ##
 
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) installed.
+Avant de commencer :checkered_flag:, vous devez avoir [Git](https://git-scm.com) installé.
 
-## :checkered_flag: Starting ##
+## :checkered_flag: Démarrage ##
 
 ```bash
-# Clone this project
+# Clonez ce projet
 $ git clone https://github.com/Inserer-Pseudo/projet_tp
 
-# Access
+# Accédez au répertoire
 $ cd projet_tp
 
-# Run the project
+# Lancez le projet
 $ symfony server:start
 
-# The server will initialize in the <http://localhost:8001/super/page>
+# Le serveur s'initialisera à l'adresse <http://localhost:8001/super/page>
 ```
-
-## :memo: License ##
-
-This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
-
 
 Made with :heart: by <a href="https://github.com/Inserer-Pseudo" target="_blank">Benjamin</a>
 

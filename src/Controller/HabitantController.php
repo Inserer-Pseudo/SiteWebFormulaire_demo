@@ -26,14 +26,11 @@ public function create(Request $request, EntityManagerInterface $em): Response
     // Utilisez $request->getContent() pour récupérer le contenu du payload
     $data = json_decode($request->getContent(), true);
 
-    // Récupérez les valeurs spécifiques dont vous avez besoin du payload
-    $nom = $data['nom'] ?? null;
-    
-    $prenom = $data['prenom'] ?? null;
-    $genre = $data['genre'] ?? null;
-    $dateNaissance = DateTime::createFromFormat('d/m/Y', $data['dateNaissance']) ?? null;
-    $adresse = $data['adresse'] ?? null;
-    
+    // Vérifier si les données nécessaires sont présentes
+    if (!isset($data['nom']) || !isset($data['prenom']) || !isset($data['genre']) || !isset($data['dateNaissance']) || !isset($data['adresse'])) {
+        return $this->json(['message' => 'Les données du payload sont incorrectes. Assurez-vous d\'inclure le nom et le prénom.'], 400);
+    }
+
 
     
 
@@ -41,11 +38,11 @@ public function create(Request $request, EntityManagerInterface $em): Response
     
     $habitant = new Habitant();
     $habitant
-        ->setNom($nom)
-        ->setPrenom($prenom)
-        ->setGenre($genre)
-        ->setDateNaissance($dateNaissance)
-        ->setAdresse($adresse);
+        ->setNom($data['nom'])
+        ->setPrenom($data['prenom'])
+        ->setGenre($data['genre'])
+        ->setDateNaissance(DateTime::createFromFormat('d/m/Y', $data['dateNaissance']))
+        ->setAdresse($data['adresse']);
 
     // Persistez l'objet en base de données
     $em->persist($habitant);

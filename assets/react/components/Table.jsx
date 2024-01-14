@@ -5,7 +5,7 @@ import EditIcon from '@mui/icons-material/Edit';
 const Table = () => {
     const [habitants, setHabitants] = useState([]);
 
-
+    const [show, setShow] = useState(true);
     const getHabitants = () => {
         fetch('http://127.0.0.1:8001/habitant')
             .then(response => response.json())
@@ -31,7 +31,13 @@ const Table = () => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: {nom: 'ui', prenom: 'ui', adresse: 'ui', dateNaissance: '2021-10-10'}
+            body: JSON.stringify({
+                nom: 'ui',
+                prenom: 'ui',
+                adresse: 'ui',
+                genre: 'test',
+                dateNaissance: '14/01/2024'
+            })
         })
             .then(response => response.json())
             .then(json => getHabitants())
@@ -43,8 +49,17 @@ const Table = () => {
         <div>
             <div className='d-flex justify-content-between align-items-center'>
                 <p>Table</p>
-                <button type="button" className="btn btn-primary" onClick={() => handleCreate()}>+</button>
+                <button type="button" className="btn btn-primary" onClick={() => setShow(true)}>+</button>
             </div>
+            {show &&
+                <div>
+                    <hr />
+                    <div class="input-group mb-3">
+                        <span className="input-group-text" id="basic-addon1">Name</span>
+                        <input type="text" class="form-control" placeholder="Username" aria-label="Name" aria-describedby="basic-addon1"/>
+                    </div>
+                </div>}
+
             {!habitants ? (
                 <div>Loading...</div>
             ) : (

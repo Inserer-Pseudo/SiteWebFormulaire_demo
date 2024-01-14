@@ -80,7 +80,7 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) in
 
 ```bash
 # Clone this project
-$ git clone https://github.com/{{YOUR_GITHUB_USERNAME}}/projet_tp
+$ git clone https://github.com/Inserer-Pseudo/projet_tp
 
 # Access
 $ cd projet_tp
@@ -96,7 +96,7 @@ $ symfony server:start
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
 
 
-Made with :heart: by <a href="https://github.com/Inserer-Pseudo" target="_blank">{{YOUR_NAME}}</a>
+Made with :heart: by <a href="https://github.com/Inserer-Pseudo" target="_blank">Benjamin</a>
 
 &#xa0;
 

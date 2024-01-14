@@ -65,4 +65,30 @@ public function create(Request $request, EntityManagerInterface $em): Response
         
         return $this->json(["code"=> 200, "msg"=> "delete habitant"]);
     }
+
+
+    #[Route('/habitant/edit/{id}', name: 'app_habitant_edit')]
+    public function edit(Request $request, HabitantRepository $habitantRepository, EntityManagerInterface $em, int $id): Response
+    {
+
+        $data = json_decode($request->getContent(), true);
+
+    // Vérifier si les données nécessaires sont présentes
+    if (!isset($data['nom']) || !isset($data['prenom']) || !isset($data['genre']) || !isset($data['dateNaissance']) || !isset($data['adresse'])) {
+        return $this->json(['message' => 'Les données du payload sont incorrectes. Assurez-vous d\'inclure le nom et le prénom.'], 400);
+    }
+        $habitant = $habitantRepository->find($id);
+        $habitant
+        ->setNom($data['nom'])
+        ->setPrenom($data['prenom'])
+        ->setGenre($data['genre'])
+        ->setDateNaissance(DateTime::createFromFormat('d/m/Y', $data['dateNaissance']))
+        ->setAdresse($data['adresse']);
+
+    // Persistez l'objet en base de données
+    $em->persist($habitant);
+    $em->flush();
+        
+        return $this->json(["code"=> 200, "msg"=> "edit habitant"]);
+    }
 }

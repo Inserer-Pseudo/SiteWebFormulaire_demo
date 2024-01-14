@@ -1,5 +1,5 @@
 <div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="Projet_tp" />
+  <img src="./PageAcceuil.png" alt="Projet_tp" />
 
   &#xa0;
 
@@ -60,6 +60,7 @@ L'interface en ligne permet de créer, modifier et supprimer des habitants. Elle
 
 :heavy_check_mark: Créer, modifier et supprimer un habitant;\
 :heavy_check_mark: Afficher la liste des habitants et leur infos;\
+:x: Effectuer un tri dans la liste;
 :x: Rechercher un habitant par nom, prénom, date de naissance, genre ou adresse;
 
 ## :rocket: Technologies ##
@@ -85,10 +86,20 @@ $ git clone https://github.com/Inserer-Pseudo/projet_tp
 # Accédez au répertoire
 $ cd projet_tp
 
-# Lancez le projet
+# Démarrer le serveur mySQL
+$ sudo /opt/lampp/xampp start
+
+# Lancez le backend
 $ symfony server:start
 
-# Le serveur s'initialisera à l'adresse <http://localhost:8001/super/page>
+# Lancez le frontend
+$ rien à faire, il est build (npm run build)
+
+# Lancez le frontend (en mode dev-server)
+$ npm run dev-server
+
+# Le serveur s'initialisera à l'adresse <http://127.0.0.1:8001/super/page>
+Ne pas utiliser localhost à cause des CORS (pas résolu)
 ```
 
 Made with :heart: by <a href="https://github.com/Inserer-Pseudo" target="_blank">Benjamin</a>

@@ -91,7 +91,7 @@ $ sudo /opt/lampp/xampp start
 $ symfony server:start
 
 # Lancez le frontend
-$ rien à faire, il est build (npm run build)
+$ npm run build
 
 # Lancez le frontend (en mode dev-server)
 $ npm run dev-server

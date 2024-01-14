@@ -2,8 +2,6 @@
   <img src="./PageAcceuil.png" alt="Projet_tp" />
 
   &#xa0;
-
-  <!-- <a href="https://projet_tp.netlify.app">Demo</a> -->
 </div>
 
 <h1 align="center">Projet_tp</h1>
@@ -60,7 +58,7 @@ L'interface en ligne permet de créer, modifier et supprimer des habitants. Elle
 
 :heavy_check_mark: Créer, modifier et supprimer un habitant;\
 :heavy_check_mark: Afficher la liste des habitants et leur infos;\
-:x: Effectuer un tri dans la liste;
+:x: Effectuer un tri dans la liste;\
 :x: Rechercher un habitant par nom, prénom, date de naissance, genre ou adresse;
 
 ## :rocket: Technologies ##

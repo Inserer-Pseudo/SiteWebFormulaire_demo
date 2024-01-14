@@ -24,6 +24,9 @@ class Habitant
     private ?\DateTimeInterface $date_naissance = null;
 
     #[ORM\Column(length: 255)]
+    private ?string $genre = null;
+
+    #[ORM\Column(length: 255)]
     private ?string $adresse = null;
 
     public function getId(): ?int
@@ -67,8 +70,17 @@ class Habitant
         return $this;
     }
 
+    public function getGenre(): ?string
+    {
+        return $this->genre;
+    }
 
+    public function setGenre(string $genre): static
+    {
+        $this->genre = $genre;
 
+        return $this;
+    }
 
     public function getAdresse(): ?string
     {
@@ -81,5 +93,4 @@ class Habitant
 
         return $this;
     }
-
 }

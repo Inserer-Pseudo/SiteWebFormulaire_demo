@@ -20,20 +20,18 @@ class HabitantController extends AbstractController
         return $this->json($habitants);
     }
 
-    #[Route('/habitant/create', name: 'app_habitant_create')]
-    public function create(HabitantRepository $habitantRepository, EntityManagerInterface $em): Response
+    #[Route('/habitant/create', name: 'app_habitant_create', method: 'POST')]
+    public function create(HabitantRepository $habitantRepository, EntityManagerInterface $em, Request $req): Response
     {
 
-        /*
-        $headers = $request->headers->all();
-        echo($headers);
-        */
+
+        echo "$req"
         
         $habitant = new Habitant();
         $habitant
             ->setNom('Test')
             ->setPrenom('Test')
-            ->setGenreId(1)
+            ->setGenre('test')
             ->setDateNaissance(DateTime::createFromFormat('d/m/Y', '13/01/2024'))
             ->setAdresse('test');
 

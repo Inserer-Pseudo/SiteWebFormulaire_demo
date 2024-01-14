@@ -5,6 +5,7 @@ import EditIcon from '@mui/icons-material/Edit';
 const Table = () => {
     const [habitants, setHabitants] = useState([]);
 
+
     const getHabitants = () => {
         fetch('http://127.0.0.1:8001/habitant')
             .then(response => response.json())
@@ -26,7 +27,8 @@ const Table = () => {
     }
     const handleCreate = (id) => {
         fetch(`http://127.0.0.1:8001/habitant/create`, {
-            method: 'POST'
+            method: 'POST',
+            body: {test: "test"}
         })
             .then(response => response.json())
             .then(json => getHabitants())
@@ -40,7 +42,7 @@ const Table = () => {
                 <p>Table</p>
                 <button type="button" className="btn btn-primary" onClick={() => handleCreate()}>+</button>
             </div>
-            {habitants.length === 0 ? (
+            {!habitants ? (
                 <div>Loading...</div>
             ) : (
                 <table className="table table-hover">
